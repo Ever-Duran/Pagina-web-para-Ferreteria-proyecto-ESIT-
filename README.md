@@ -1,5 +1,5 @@
 # Página web para Ferretería proyecto ESIT
-Sitio web de Ferretería Alex con catálogo de productos, integración con ostgreSQL y asistente virtual mediante Gemini AI.
+Sitio web de Ferretería Alex con catálogo de productos, integración con PostgreSQL y asistente virtual mediante Gemini AI.
 
 
 Modernización y Autonomía Digital: Proyecto Ferretería Alex
