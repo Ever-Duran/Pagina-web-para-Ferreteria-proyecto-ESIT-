@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos | Ferretería Alex </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            Ferretería <span>Alex</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="contacto.html">Contacto</a>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero productos-hero">
+
+        <div class="hero-content">
+
+            <h1>Nuestro Catálogo</h1>
+
+            <p>
+
+                Explora nuestro inventario de herramientas,
+                materiales de construcción, pinturas, electricidad,
+                plomería y mucho más.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= BUSCADOR ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Buscar Productos
+        </h2>
+
+        <form class="search-container" id="searchForm">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar un producto...">
+
+        <select id="categoryFilter">
+    <option value="">Todas las categorías</option>
+</select>
+
+    <button type="submit" id="searchButton">
+        Buscar
+    </button>
+
+</form>
+
+    </section>
+
+    <!-- ================= PRODUCTOS ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+
+            Productos Disponibles
+
+        </h2>
+
+        <div
+            class="product-grid"
+            id="productGrid">
+
+            <p id="loadingMessage">
+    Cargando productos...
+</p>
+
+            <!--
+                Aquí JavaScript agregará
+                automáticamente todas
+                las tarjetas provenientes
+                de PostgreSQL.
+            -->
+
+        </div>
+        <div class="pagination">
+
+    <button id="prevPage">
+        ← Anterior
+    </button>
+
+    <span id="pageInfo">
+        Página 1
+    </span>
+
+    <button id="nextPage">
+        Siguiente →
+    </button>
+
+</div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>Ferretería Alex</h3>
+
+        <p>
+
+            Calidad, confianza y servicio
+            para todos tus proyectos.
+
+        </p>
+
+    </footer>
+
+    <!-- ================= JS ================= -->
+
+    <script src="js/productos.js"></script>
+
+
+<!-- ================= MODAL PRODUCTO ================= -->
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close-modal">&times;</span>
+
+        <img id="modalImage" src="" alt="Producto">
+
+        <h2 id="modalName"></h2>
+
+        <p><strong>Código:</strong> <span id="modalCode"></span></p>
+
+        <p><strong>Categoría:</strong> <span id="modalCategory"></span></p>
+
+        <p><strong>Costo:</strong> $<span id="modalPrice"></span></p>
+
+        <p><strong>Existencias:</strong> <span id="modalStock"></span></p>
+
+    </div>
+</div>
+
+</body>
+
+</html>

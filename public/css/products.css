@@ -1,0 +1,434 @@
+/* ================= HERO PRODUCTOS ================= */
+
+.productos-hero{
+
+    height:45vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ================= BUSCADOR ================= */
+
+.search-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.search-container input{
+
+    flex:1;
+
+    padding:14px 18px;
+
+    border:2px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:1rem;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.search-container input:focus{
+
+    border-color:var(--industrial-orange);
+
+}
+
+.search-container button{
+
+    background:var(--industrial-orange);
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.search-container button:hover{
+
+    background:#cf7411;
+
+}
+
+/* ================= PRODUCTOS ================= */
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+/* ================= TARJETA ================= */
+
+.product-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+    border-top:4px solid var(--industrial-orange);
+
+    transition:.3s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.15);
+
+}
+
+/* ================= IMAGEN ================= */
+
+.product-image{
+
+    width:100%;
+
+    height:220px;
+
+    background:#f5f5f5;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    padding:15px;
+
+}
+
+/* ================= INFORMACIÓN ================= */
+
+.product-info{
+
+    padding:22px;
+
+}
+
+.product-info h3{
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    color:var(--primary-blue);
+
+    line-height:1.35;
+
+    margin-bottom:15px;
+
+    min-height:54px;
+
+}
+
+.product-info p{
+
+    margin:8px 0;
+
+    font-size:1rem;
+
+    color:var(--steel-gray);
+
+    line-height:1.5;
+
+}
+
+.product-info strong{
+
+    color:var(--charcoal);
+
+}
+
+/* ================= BOTÓN ================= */
+
+.product-button{
+
+    display:block;
+
+    margin-top:20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:var(--primary-blue);
+
+    color:white;
+
+    padding:13px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.product-button:hover{
+
+    background:var(--industrial-orange);
+
+}
+
+/* ================= MENSAJE ================= */
+
+#loadingMessage{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    font-size:1.2rem;
+
+    color:var(--steel-gray);
+
+}
+
+/* ================= PAGINACIÓN ================= */
+
+.pagination{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.pagination button{
+
+    background:var(--primary-blue);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.pagination button:hover{
+
+    background:var(--industrial-orange);
+
+}
+
+.pagination button:disabled{
+
+    opacity:.4;
+
+    cursor:not-allowed;
+
+}
+
+#pageInfo{
+
+    font-weight:700;
+
+    font-size:1rem;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .search-container{
+
+        flex-direction:column;
+
+    }
+
+}
+
+
+/* ================= MODAL ================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:1000;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.6);
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:90%;
+
+    max-width:650px;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    position:relative;
+
+    animation:fadeIn .25s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.modal-content img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:contain;
+
+    background:#f5f5f5;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+}
+
+.modal-content h2{
+
+    color:var(--primary-blue);
+
+    margin-bottom:20px;
+
+    font-size:1.8rem;
+
+}
+
+.modal-content p{
+
+    margin:10px 0;
+
+    font-size:1rem;
+
+    color:var(--steel-gray);
+
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    color:#777;
+
+    transition:.3s;
+
+}
+
+.close-modal:hover{
+
+    color:var(--industrial-orange);
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
