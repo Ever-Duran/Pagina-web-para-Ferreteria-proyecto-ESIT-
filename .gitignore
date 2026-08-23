@@ -1,5 +1,6 @@
 # Dependencias de Node.js
 node_modules/
+*.sql
 
 # Variables de entorno
 .env
@@ -23,4 +24,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-*.sql
+
+
+productos_backup.sql
+>>>>>>> e4654e7 (Ignorar respaldos de base de datos)
