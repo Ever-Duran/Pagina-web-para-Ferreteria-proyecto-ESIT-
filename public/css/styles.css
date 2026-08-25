@@ -106,6 +106,28 @@ html{
       transform: translateY(-2px);
     }
 
+
+/* =========================
+   IMAGEN DE LA FACHADA
+   ========================= */
+
+.fachada-section {
+  width: 100%;
+  padding: 25px 5%;
+  background: var(--soft-white);
+}
+
+.fachada-img {
+  display: block;
+  width: 70%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
     /* ===== CATEGORIES ===== */
     .section {
       padding: 80px 8%;
