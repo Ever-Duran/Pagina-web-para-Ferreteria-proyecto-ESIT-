@@ -13,7 +13,7 @@ function mostrarProductos(productos) {
 
     if (productos.length === 0) {
 
-        productGrid.innerHTML = `
+        productGrid.innerHTML = `a
             <p id="loadingMessage">
                 No se encontraron productos.
             </p>
@@ -39,14 +39,16 @@ function mostrarProductos(productos) {
 
         const imagen = `images/products/${codigo}.jpg`;
 
+        const imagenAlternativa = `images/products/${codigo}.jpeg`;
+
         card.innerHTML = `
 
             <div class="product-image">
 
                 <img
-                    src="${imagen}"
-                    alt="${nombre}"
-                    onerror="this.onerror=null;this.src='images/no-image.jpg';">
+    src="${imagen}"
+    alt="${nombre}"
+    onerror="if(this.src.includes('.jpg')){this.src='${imagenAlternativa}';}else{this.onerror=null;this.src='images/no-image.jpg';}">
 
             </div>
 
@@ -222,10 +224,7 @@ document.getElementById("prevPage").addEventListener("click", () => {
 
         buscarProductos();
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        
 
     }
 
@@ -239,10 +238,7 @@ document.getElementById("nextPage").addEventListener("click", () => {
 
         buscarProductos();
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        
 
     }
 
