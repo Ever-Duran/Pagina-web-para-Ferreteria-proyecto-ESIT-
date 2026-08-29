@@ -16,7 +16,9 @@ router.get("/", async (req, res) => {
 
         const offset = (page - 1) * limit;
 
-        let where = "WHERE 1=1";
+        // Solo mostrar productos que tengan código
+        let where = `WHERE "Codigo" IS NOT NULL
+                     AND TRIM(CAST("Codigo" AS TEXT)) <> ''`;
 
         const values = [];
 
@@ -43,7 +45,10 @@ router.get("/", async (req, res) => {
 
         }
 
-        // Obtener el total de productos
+        // =============================
+        // OBTENER EL TOTAL DE PRODUCTOS
+        // =============================
+
         const totalQuery = `
             SELECT COUNT(*) AS total
             FROM productos
@@ -52,11 +57,17 @@ router.get("/", async (req, res) => {
 
         const totalResult = await db.query(totalQuery, values);
 
-        const totalProductos = parseInt(totalResult.rows[0].total);
+        const totalProductos =
+            parseInt(totalResult.rows[0].total);
 
-        const totalPaginas = Math.ceil(totalProductos / limit);
+        const totalPaginas =
+            Math.ceil(totalProductos / limit);
 
-        // Consulta paginada
+
+        // =============================
+        // CONSULTA PAGINADA
+        // =============================
+
         values.push(limit);
         values.push(offset);
 
@@ -69,7 +80,13 @@ router.get("/", async (req, res) => {
             OFFSET $${values.length}
         `;
 
-        const result = await db.query(dataQuery, values);
+        const result =
+            await db.query(dataQuery, values);
+
+
+        // =============================
+        // RESPUESTA
+        // =============================
 
         res.json({
 
