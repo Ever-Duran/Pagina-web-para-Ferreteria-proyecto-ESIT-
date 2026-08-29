@@ -79,15 +79,10 @@ function mostrarProductos(productos) {
         card.querySelector(".consultar-btn").addEventListener("click", () => {
 
             console.log("CLICK FUNCIONA");
-
             document.getElementById("modalName").textContent = nombre;
-
             document.getElementById("modalCode").textContent = codigo;
-
             document.getElementById("modalCategory").textContent = categoria;
-
             document.getElementById("modalPrice").textContent = costo;
-
             document.getElementById("modalStock").textContent = existencia;
 
             const img = document.getElementById("modalImage");
@@ -96,9 +91,20 @@ function mostrarProductos(productos) {
 
             img.onerror = function () {
 
-                this.src = "images/no-image.jpg";
+        // Si no existe JPG, intenta JPEG
+        if (this.src.endsWith(".jpg")) {
 
-            };
+            this.src = `images/products/${codigo}.jpeg`;
+
+        } else {
+
+            // Si tampoco existe JPEG
+            this.onerror = null;
+            this.src = "images/no-image.jpg";
+
+        }
+
+    };
 
             document.getElementById("productModal").style.display = "flex";
 
